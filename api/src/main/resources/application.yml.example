@@ -1,0 +1,17 @@
+spring:
+  servlet:
+    multipart:
+      enabled: false
+  application:
+    name: hls-video
+  datasource:
+    url: jdbc:mysql://<db-url>/<database>
+    username: <username>
+    password: <password>
+blob-storage:
+  endpoint: <endpoint>
+  access-key: <access-key>
+  secret-key: <secret-key>
+  buckets:
+    videos: <videos>
+    thumbnails: <thumbnails>
