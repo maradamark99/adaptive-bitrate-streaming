@@ -39,6 +39,18 @@ class Resolution:
   def __str__(self):
     return f"{self.width}x{self.height}"
 
+  def __post_init__(self):
+    if self.width <= 0 or self.height <= 0:
+      raise ValueError("Width and height must be positive integers")
+  
+  def __eq__(self, other) -> bool:
+    if not isinstance(other, Resolution):
+      raise AttributeError("Parameter is not a Resolution")
+    return str(self) == str(other)
+  
+  def __hash__(self) -> int:
+    return hash(str(self))
+
 
 @dataclass
 class VideoMetadata:
@@ -46,6 +58,6 @@ class VideoMetadata:
   resolution: Resolution
   bitrate_in_kb_per_sec: int
   framerate: float
-#  length_in_secs: float
+  length_in_secs: float
 
 
