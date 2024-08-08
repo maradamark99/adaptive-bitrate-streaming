@@ -8,8 +8,8 @@ from itertools import chain
 
 @dataclass
 class WorkResult:
-    video_path: str
-    video_name: str
+    file_path: str
+    file_name: str
 
 class Worker:
 
